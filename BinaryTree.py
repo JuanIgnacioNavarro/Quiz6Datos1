@@ -6,9 +6,15 @@ class Node:
         self.value = value
 
 class Tree:
+    #Global atributes for tests
+    resultPostOrder = ""
+    resultPreOrder = ""
+    resultInOrder = ""
+    
+    #Initial Method
     def __init__ (self):
         self.root = None
-
+    #Verify if the tree is empty
     def isEmpty (self):
         if (self.root == None):
             return True
@@ -97,48 +103,57 @@ class Tree:
     #Preorder
     def printTreePreOrder (self):
         if (self.isEmpty):
+            self.resultPreOrder=""
             self._printTreePreOrder (self.root)
+        return self.resultPreOrder
 
     def _printTreePreOrder(self, node):
         if (node != None):
             print(node.value)
+            self.resultPreOrder+= str(node.value) +  " "
             self._printTreePreOrder (node.left)
             self._printTreePreOrder (node.right)
+            
     #Inorder
 
     def printTreeInOrder (self):
         if (self.isEmpty):
+            self.resultInOrder=""
             self._printTreeInOrder (self.root)
+        return self.resultInOrder
 
     def _printTreeInOrder (self, node):
         if (node != None):
             self._printTreeInOrder (node.left)
             print (node.value)
+            self.resultInOrder+= str(node.value) +  " "
             self._printTreeInOrder (node.right)
+            
     #Postorder
 
     def printTreePostOrder (self):
         if (self.isEmpty):
+            self.resultPostOrder=""
             self._printTreePostOrder (self.root)
+        return self.resultPostOrder
 
     def _printTreePostOrder (self, node):
         if (node != None):
             self._printTreePostOrder (node.left)
             self._printTreePostOrder (node.right)
             print (node.value)
+            self.resultPostOrder+= str(node.value) +  " "
+            
+       
          
 tree = Tree ()
 tree.add(7)
 tree.add(4)
 tree.add(10)
-tree.add(8)
-tree.add(11)
-tree.add(9)
 tree.add(2)
 tree.add(1)
 tree.add(5)
-tree.delete(4)
-tree.delete (1)
+
 print ("Print PostOrder: ")
 tree.printTreePostOrder()
 print ("Print PreOrder: ")
@@ -148,5 +163,6 @@ tree.printTreeInOrder()
 
 print ("El valor mínimo es: "+ str(tree.findMin()))
 print ("El valor máximo es: "+ str(tree.findMax()))
+print (tree.printTreePreOrder())
 
         
