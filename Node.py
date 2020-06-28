@@ -42,14 +42,14 @@ class Tree:
     def _delete (self, value, node):
         if (node == None):
             return node
-        if (node.value < value):
+        if (value < node.value):
             node.left = self._delete (value, node.left)
             
-        elif (node.value > value):
+        elif (value > node.value):
             node.right = self._delete (value, node.right)
             
         elif (node.left != None and node.right != None):
-            node.value = self.findMin (node.right).value
+            node.value = self._findMin (node.right).value
             node.right = self._delete (node.value, node.right)
         else:
             if (node.left != None):
@@ -135,7 +135,7 @@ tree.add(8)
 tree.add(2)
 tree.add(1)
 tree.add(5)
-tree.delete(5)
+tree.delete(4)
 tree.printTreePostOrder()
 
 print ("El valor mínimo es: "+ str(tree.findMin()))
