@@ -1,3 +1,4 @@
+
 class Node:
     def __init__ (self, value):
         self.left = None
@@ -126,18 +127,26 @@ class Tree:
             self._printTreePostOrder (node.right)
             print (node.value)
          
-
 tree = Tree ()
 tree.add(7)
 tree.add(4)
 tree.add(10)
 tree.add(8)
+tree.add(11)
+tree.add(9)
 tree.add(2)
 tree.add(1)
 tree.add(5)
 tree.delete(4)
+tree.delete (1)
+print ("Print PostOrder: ")
 tree.printTreePostOrder()
+print ("Print PreOrder: ")
+tree.printTreePreOrder()
+print ("Print InOrder: ")
+tree.printTreeInOrder()
 
 print ("El valor mínimo es: "+ str(tree.findMin()))
 print ("El valor máximo es: "+ str(tree.findMax()))
+
         
