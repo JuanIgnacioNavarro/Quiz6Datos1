@@ -1,0 +1,1 @@
+Once you run the Coverage.py file a new html with the coverage results is created. To see the results open that file.I was going to upload the pictures in here, but I noticed that the wiki pictures need a url.
