@@ -24,6 +24,8 @@ class TestBinaryTree (unittest.TestCase):
         self.tree2.add (9)
         self.tree2.add (11)
         self.tree2.add (13)
+
+        self.tree3 = Tree ()
         
     def test_0010_addPost (self):
         self.assertEqual ("1 2 5 4 10 7 ", self.tree1.printTreePostOrder())
@@ -39,6 +41,15 @@ class TestBinaryTree (unittest.TestCase):
         self.tree2.delete(7)
         self.tree2.delete(14)
         self.assertEqual ("6 8 9 10 11 12 13 ", self.tree2.printTreeInOrder())
+
+    def test_0050_minMax (self):
+        self.assertEqual (5, self.tree2.findMin())
+        self.assertEqual (14, self.tree2.findMax())
+
+    def test_0060_empty (self):
+        self.assertEqual (None, self.tree3.findMin())
+        self.assertEqual (None, self.tree3.findMax())
+        self.assertEqual (None, self.tree3.delete(3))
             
 def suite():
 
@@ -62,8 +73,5 @@ if (__name__ == "__main__"):
     cov.save()
 
     cov.html_report()
-
-
-# .. call your code ..
 
 

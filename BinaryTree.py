@@ -144,25 +144,3 @@ class Tree:
             print (node.value)
             self.resultPostOrder+= str(node.value) +  " "
             
-       
-         
-tree = Tree ()
-tree.add(7)
-tree.add(4)
-tree.add(10)
-tree.add(2)
-tree.add(1)
-tree.add(5)
-
-print ("Print PostOrder: ")
-tree.printTreePostOrder()
-print ("Print PreOrder: ")
-tree.printTreePreOrder()
-print ("Print InOrder: ")
-tree.printTreeInOrder()
-
-print ("El valor mínimo es: "+ str(tree.findMin()))
-print ("El valor máximo es: "+ str(tree.findMax()))
-print (tree.printTreePreOrder())
-
-        
